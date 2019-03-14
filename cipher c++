@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    int k;
+    cin>>s;
+    cin>>k;
+   // k%=123;
+    for(int i=0;s[i]!='\0';i++)
+    {	
+    	if((s[i] >= '0' && s[i] <='9') || (s[i]>='A' && s[i]<='Z') || (s[i]>='a' && s[i]<='z'))
+    	{
+    		int j=0;
+    		while(j<k)
+    		{
+    			s[i]++;
+    			if(s[i] == 58) s[i] = 48; // if the values increases by 9
+    			if(s[i] == 123) s[i] =97; // if the value increases from a
+          
+    			if(s[i] == 91) s[i] = 65; // if the value increases from A
+    			j++;
+			}
+		}
+		cout<<s[i];
+	}
+	
+}
